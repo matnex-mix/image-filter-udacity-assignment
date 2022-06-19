@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf www/ || true",
     "prestart": "npm run build",
-    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
+    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "start": "node ./src/index.js"
+    "start": "export PORT=8000 && node ./www/server.js"
   },
   "repository": {
     "type": "git",
