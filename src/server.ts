@@ -38,7 +38,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
         res.sendFile( file, ( err ) => {
           if (err) {
-            next(err);
+            throw (err);
           } else {
             deleteLocalFiles([ file ]);
           }
